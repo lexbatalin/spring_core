@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+
+    <import resource="t1000Context.xml"/>
+    <import resource="t1000PoolContext.xml"/>
+
+    <bean id="t1000Map" class="kz.spring.core.impls.pool.T1000Map">
+        <constructor-arg name="robotCollection">
+            <map>
+                <entry key="2005" value-ref="t1000"/>
+
+                <entry key="2007" value-ref="t1000"/>
+
+                <entry key="2008">
+                    <bean class="kz.spring.core.impls.robots.ModelT1000" parent="baseModel">
+                        <constructor-arg value="green" index="3" type="java.lang.String"/>
+                        <constructor-arg value="2007" index="4" type="int"/>
+                        <constructor-arg value="false" index="5" type="boolean"/>
+                    </bean>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>

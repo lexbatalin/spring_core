@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+
+    <bean id="replaceT1000" class="kz.spring.core.impls.replacement.ReplacementT1000"/>
+
+    <bean id="t1000Empty" class="kz.spring.core.impls.robots.ModelT1000">
+        <replaced-method name="dance" replacer="replaceT1000"/>
+    </bean>
+
+</beans>

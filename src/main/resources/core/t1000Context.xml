@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+       default-lazy-init="true">
+
+    <context:annotation-config/>
+
+    <import resource="sonyContext.xml"/>
+    <import resource="toshibaContext.xml"/>
+<!--    <import resource="dbContext.xml"/>-->
+
+        <bean id="t1000" class="kz.spring.core.impls.robots.ModelT1000" scope="prototype"/>
+
+
+    <!--    <bean id="t1000" class="kz.spring.core.impls.robots.ModelT1000"-->
+<!--         parent="baseModel" scope="prototype">-->
+
+<!--        <constructor-arg value="black" index="3" type="java.lang.String"/>-->
+<!--        <constructor-arg value="2020" index="4" type="int"/>-->
+<!--        <constructor-arg value="true" index="5" type="boolean"/>-->
+
+<!--        <property name="head" ref="toshibaHead"/>-->
+
+<!--    </bean>-->
+
+<!--    <bean id="baseModel" abstract="true">-->
+<!--        <constructor-arg ref="sonyHand" />-->
+<!--        <constructor-arg ref="sonyLeg" />-->
+<!--        <constructor-arg ref="sonyHead"/>-->
+
+<!--    </bean>-->
+
+<!--    <bean id="t1000Prop" class="kz.spring.core.impls.robots.ModelT1000">-->
+
+<!--        &lt;!&ndash; property rewrite constructor-arg &ndash;&gt;-->
+
+<!--        <property name="color" value="red"/>-->
+<!--        <property name="year" value="2002"/>-->
+<!--        <property name="soundEnabled" value="true"/>-->
+
+<!--        <constructor-arg name="color" value="silver"  index="0" type="java.lang.String"/>-->
+<!--        <constructor-arg name="year" value="2020" index="1" type="int"/>-->
+<!--        <constructor-arg name="soundEnabled" value="false" index="2" type="boolean"/>-->
+
+<!--    </bean>-->
+
+</beans>
